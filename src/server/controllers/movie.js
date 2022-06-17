@@ -31,13 +31,12 @@ const createMovie = async (req, res) => {
         runtimeMins,
       },
     });
+    console.log(createdMovie);
+
+    res.json({ data: createdMovie });
   } catch (e) {
     return res.status(401).json({ error: e.toString() });
   }
-
-  console.log(createdMovie);
-
-  res.json({ data: createdMovie });
 };
 
 module.exports = {
